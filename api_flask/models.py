@@ -1,6 +1,6 @@
 from peewee import *
 
-DATABASE = MySQLDatabase('project_fda', host='database', user='alba', passwd='bobYpal2')
+DATABASE = MySQLDatabase('project_fda', host='database', user='root', passwd='root')
 
 class ActionTypes(Model):
 	class Meta:
