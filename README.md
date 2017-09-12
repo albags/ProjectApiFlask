@@ -7,6 +7,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 * [Docker](https://docs.docker.com/engine/installation/)
+* [Docker-composer](https://docs.docker.com/compose/install/)
 
 ### Installing & running
 Clone the project on your local machine
