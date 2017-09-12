@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="Alba Gómez Segura">
+
+		<title>API Rest</title>
+
+		<!-- Reset CSS -->
+		<link rel="stylesheet" type="text/css" href="../static/css/reset.css" />
+
+		<!-- JQuery CSS -->
+		<link rel="stylesheet" type="text/css" href="../static/vendors/jquery/css/jquery-ui.css" />
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" type="text/css" href="../static/vendors/bootstrap/css/bootstrap.min.css" />
+
+		<!-- Own CSS -->
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+
+		<!-- jQuery -->
+		<script src="../static/vendors/jquery/js/jQuery.js" type="text/javascript" xml:space="preserve"></script>
+		<script src="../static/vendors/jquery/js/jquery-1.12.4.js" type="text/javascript" xml:space="preserve"></script>
+		<script src="../static/vendors/jquery/js/jquery.min.js" type="text/javascript" xml:space="preserve"></script> 
+
+		<!-- Bootstrap -->
+		<script src="../static/vendors/bootstrap/js/bootstrap.min.js" type="text/javascript" xml:space="preserve"></script>
+
+		<!-- Own code JQuery-->
+		<script src="../static/js/jquery.js" type="text/javascript" xml:space="preserve"></script> 
+
+	</head>
+
+	<body class="container">
+		
+		<h1>Database API Rest</h1>
+
+		{% for option in options %}
+
+			<div class="container formContent" style="border-radius: 10px; border: 1px solid grey;">
+				<button type="button" class="btn btn-success btn-md" onclick="checkInput( '{{ option }}', '{{ loop.index }}' );">GET</button>
+				<label>{{ option }}</label>
+				
+				<div class="resultContent">
+					<div id="form{{ loop.index }}" class="requestDiv" style="display:none;">
+						<label>Description</label>
+						<div>
+							<p>Retrieve activity object list.</p>
+						</div>
+						<label>Schema</label>
+						<div>
+							<p>/api/{{ option }}</p>
+						</div>
+						<label>Requires</label>
+						<div>
+							<p class="idNoNeeded" id="inputNone{{ loop.index }}">No parameters required</p>
+							<p class="idNeeded" id="inputName{{ loop.index }}"></p>
+							<input type="text" class="idNeeded" id="input{{ loop.index }}" style="display:none;" />
+						</div>
+						<label>Format</label>
+						<div>
+							<p>json</p>
+						</div>
+						<p>Click GET to test the service!</p>
+						<button type="button" class="btn btn-success btn-md" onclick="apiRequest( '{{ option }}', '{{ loop.index }}' );">GET</button>
+						<label>{{ option }}</label>
+					</div>
+
+					<div id="response{{ loop.index }}" class="reponseDiv" style="display:none;">
+						<label>Request URI</label>
+						<div>
+							<p>/api/{{ option }}</p>
+						</div>
+						<label>Response Code</label>
+						<div>
+							<p class="responseStatus"></p>
+						</div>
+						<label>Response</label>
+						<div>
+							<p class="responseMsg"></p>
+						</div>
+						<label>Response Body</label>
+						<pre class="responseData jsonResults"></pre>
+					</div>
+				</div>
+			</div>
+
+		{% endfor %}
+
+	</body>
+	
+</html>
