@@ -1,6 +1,6 @@
-TAG=mtb/accountsdb
+TAG=root/accountsdb
 VERSION=latest
-META=mtb_accountsdb
+META=root_accountsdb
 
 default: build
 

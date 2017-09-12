@@ -7,8 +7,8 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes" 
       MYSQL_RANDOM_ROOT_PASSWORD: "no"
       MYSQL_ROOT_PASSWORD: "mtb"
-      MYSQL_USER:  "root"
-      MYSQL_PASSWORD: "root"
+      MYSQL_USER:  "user"
+      MYSQL_PASSWORD: "userpwd"
       MYSQL_DATABASE: "project_fda"
     volumes:
       - ./db:/var/lib/mysql
@@ -23,3 +23,5 @@ services:
       - database
     ports:
       - "1080:5000"
+
+
