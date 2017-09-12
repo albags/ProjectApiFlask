@@ -6,7 +6,7 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes" 
       MYSQL_RANDOM_ROOT_PASSWORD: "no"
-      MYSQL_ROOT_PASSWORD: "mtb"
+      MYSQL_ROOT_PASSWORD: "root"
       MYSQL_USER:  "user"
       MYSQL_PASSWORD: "userpwd"
       MYSQL_DATABASE: "project_fda"
